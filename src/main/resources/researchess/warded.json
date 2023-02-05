@@ -1,0 +1,315 @@
+{
+    "entries": [
+        {
+            "key": "WARDED_ARCANA",
+            "name": "thaumicaugmentation.research.warded_arcana.title",
+            "icons": [
+                "thaumicaugmentation:warded_chest"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMIC_AUGMENTATION_BASE",
+                "WARDEDJARS",
+                "METALLURGY"
+            ],
+            "location": [
+                0,
+                3
+            ],
+            "meta": [
+                "ROUND"
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.warded_arcana.0",
+                    "required_item": [
+                        "thaumcraft:jar_normal"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "OBSERVATION;AUROMANCY;1"
+                    ],
+                    "required_research": [
+                        "!praemunio"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.warded_arcana.1",
+                    "required_item": [
+                        "oredict:chestWood",
+                        "thaumicaugmentation:material;1;1"
+                    ],
+                    "required_knowledge": [
+                        "THEORY;ARTIFICE;1"
+                    ],
+                    "recipes": [
+                        "thaumicaugmentation:warding_sigil"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.warded_arcana.2",
+                    "recipes": [
+                        "thaumicaugmentation:warding_sigil",
+                        "thaumicaugmentation:warded_chest"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ARCANE_DOOR",
+            "name": "thaumicaugmentation.research.arcane_door.title",
+            "icons": [
+                "thaumicaugmentation:arcane_door;1;0",
+                "thaumicaugmentation:arcane_door;1;1",
+                "thaumicaugmentation:arcane_door;1;2"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "WARDED_ARCANA"
+            ],
+            "location": [
+                -1,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.arcane_door.0",
+                    "required_item": [
+                        "oredict:doorWood",
+                        "minecraft:iron_door"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.arcane_door.1",
+                    "recipes": [
+                        "thaumicaugmentation:arcane_door_greatwood",
+                        "thaumicaugmentation:arcane_door_thaumium",
+                        "thaumicaugmentation:arcane_door_silverwood",
+                        "thaumicaugmentation:arcane_trapdoor_greatwood",
+                        "thaumicaugmentation:arcane_trapdoor_thaumium",
+                        "thaumicaugmentation:arcane_trapdoor_silverwood"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "WARD_KEYS",
+            "name": "thaumicaugmentation.research.ward_keys.title",
+            "icons": [
+                "thaumicaugmentation:key;1;0",
+                "thaumicaugmentation:key;1;1",
+                "thaumicaugmentation:key;1;2"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "WARDED_ARCANA"
+            ],
+            "location": [
+                -1,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.ward_keys.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.ward_keys.1",
+                    "recipes": [
+                        "thaumicaugmentation:key_iron",
+                        "thaumicaugmentation:key_brass",
+                        "thaumicaugmentation:key_thaumium"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "WARD_OPENERS",
+            "name": "thaumicaugmentation.research.ward_openers.title",
+            "icons": [
+                "thaumicaugmentation:warded_button_greatwood",
+                "thaumicaugmentation:warded_button_silverwood",
+                "thaumicaugmentation:warded_button_arcane_stone",
+                "thaumicaugmentation:warded_pressure_plate_greatwood",
+                "thaumicaugmentation:warded_pressure_plate_silverwood",
+                "thaumicaugmentation:warded_pressure_plate_arcane_stone"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "MORE_MECHANISMS",
+                "WARDED_ARCANA"
+            ],
+            "location": [
+                2,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.ward_openers.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.ward_openers.1",
+                    "recipes": [
+                        "thaumicaugmentation:warded_button_greatwood",
+                        "thaumicaugmentation:warded_button_silverwood",
+                        "thaumicaugmentation:warded_button_arcane_stone",
+                        "thaumicaugmentation:warded_pressure_plate_greatwood",
+                        "thaumicaugmentation:warded_pressure_plate_silverwood",
+                        "thaumicaugmentation:warded_pressure_plate_arcane_stone"
+                    ]
+                }
+            ],
+            "addenda": [
+                {
+                    "text": "thaumicaugmentation.research.ward_openers.2",
+                    "required_research": [
+                        "ARCANE_DOOR"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "FORTIFIED_GLASS",
+            "name": "thaumicaugmentation.research.fortified_glass.title",
+            "icons": [
+                "thaumicaugmentation:fortified_glass"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "WARDED_ARCANA"
+            ],
+            "location": [
+                0,
+                5
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.fortified_glass.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.fortified_glass.1",
+                    "recipes": [
+                        "thaumicaugmentation:fortified_glass",
+                        "thaumicaugmentation:fortified_glass_pane"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "STARFIELD_GLASS_RIFT",
+            "name": "thaumicaugmentation.research.starfield_glass_rift.title",
+            "icons": [
+                "thaumicaugmentation:starfield_glass;1;0"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "FORTIFIED_GLASS",
+                "!FluxRift"
+            ],
+            "meta": [
+                "HIDDEN"  
+            ],
+            "location": [
+                1,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_rift.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1",
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_rift.1",
+                    "recipes": [
+                        "thaumicaugmentation:starfield_glass_rift"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "STARFIELD_GLASS_MIRROR",
+            "name": "thaumicaugmentation.research.starfield_glass_mirror.title",
+            "icons": [
+                "thaumicaugmentation:starfield_glass;1;2"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "STARFIELD_GLASS_RIFT",
+                "~MIRROR"
+            ],
+            "meta": [
+                "HIDDEN"  
+            ],
+            "location": [
+                3,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_mirror.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_mirror.1",
+                    "recipes": [
+                        "thaumicaugmentation:starfield_glass_mirror"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "STARFIELD_GLASS_FRACTURE",
+            "name": "thaumicaugmentation.research.starfield_glass_fracture.title",
+            "icons": [
+                "thaumicaugmentation:starfield_glass;1;1"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "STARFIELD_GLASS_RIFT",
+                "~ENTERING_FRACTURE"
+            ],
+            "meta": [
+                "HIDDEN"  
+            ],
+            "location": [
+                2,
+                5
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_fracture.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.starfield_glass_fracture.1",
+                    "recipes": [
+                        "thaumicaugmentation:starfield_glass_fracture"
+                    ]
+                }
+            ]
+        }
+    ]
+}

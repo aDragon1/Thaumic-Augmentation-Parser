@@ -1,0 +1,318 @@
+{
+    "entries": [
+        {
+            "key": "GAUNTLET_THAUMIUM",
+            "name": "thaumicaugmentation.research.gauntlet_thaumium.title",
+            "icons": [
+                "thaumicaugmentation:gauntlet;1;0"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "~UNLOCKAUROMANCY",
+                "~METALLURGY@2",
+                "THAUMIC_AUGMENTATION_BASE"
+            ],
+            "location": [
+                2.5,
+                -1.5
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_thaumium.0",
+                    "required_item": [
+                        "thaumcraft:plate;1;2",
+                        "thaumcraft:vis_resonator",
+                        "thaumcraft:fabric"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "OBSERVATION;ALCHEMY;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_thaumium.1",
+                    "recipes": [
+                        "thaumicaugmentation:gauntlet_thaumium"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "GAUNTLET_VOID",
+            "name": "thaumicaugmentation.research.gauntlet_void.title",
+            "icons": [
+                "thaumicaugmentation:gauntlet;1;1"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "~INFUSION",
+                "~BASEELDRITCH",
+                "GAUNTLET_THAUMIUM"
+            ],
+            "meta": [
+                "HIDDEN"
+            ],
+            "location": [
+                2.5,
+                -3
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_void.0",
+                    "required_item": [
+                        "thaumcraft:plate;1;3",
+                        "thaumcraft:vis_resonator"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_void.1",
+                    "required_craft": [
+                        "thaumcraft:voidseer_charm"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1",
+                        "THEORY;ELDRITCH;1"
+                    ],
+                    "warp": 2
+                },
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_void.2",
+                    "recipes": [
+                        "thaumicaugmentation:gauntlet_void"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "GAUNTLET_AUGMENTATION",
+            "name": "thaumicaugmentation.research.gauntlet_augmentation.title",
+            "icons": [
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_elemental\"}",
+                "thaumicaugmentation:augment_builder_effect;1;0;{id:\"thaumicaugmentation:effect_power\"}",
+                "thaumicaugmentation:augment_builder_effect;1;0;{id:\"thaumicaugmentation:effect_cast_speed\"}",
+                "thaumicaugmentation:augment_builder_effect;1;0;{id:\"thaumicaugmentation:effect_cost\"}"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "GAUNTLET_THAUMIUM",
+                "MORE_AUROMANCY"
+            ],
+            "meta": [
+                "SPIKY"
+            ],
+            "location": [
+                4.5,
+                -1.5
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_augmentation.0",
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_augmentation.1",
+                    "required_craft": [
+                        "thaumicaugmentation:augment_custom"
+                    ],
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_elemental_fake",
+                        "thaumicaugmentation:effect_provider_power",
+                        "thaumicaugmentation:effect_provider_cast_speed",
+                        "thaumicaugmentation:effect_provider_cost",
+                        "thaumicaugmentation:custom_augment_example"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.gauntlet_augmentation.2",
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_elemental_fake",
+                        "thaumicaugmentation:effect_provider_power",
+                        "thaumicaugmentation:effect_provider_cast_speed",
+                        "thaumicaugmentation:effect_provider_cost",
+                        "thaumicaugmentation:custom_augment_example"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "DIMENSIONAL_MODIFIERS",
+            "name": "thaumicaugmentation.research.dimensional_modifiers.title",
+            "icons": [
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_overworld\"}",
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_nether\"}",
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_end\"}"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "GAUNTLET_AUGMENTATION"
+            ],
+            "location": [
+                7,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.dimensional_modifiers.0",
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ],
+                    "required_item": [
+                        "oredict:dirt",
+                        "oredict:netherrack",
+                        "oredict:endstone"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.dimensional_modifiers.1",
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_overworld",
+                        "thaumicaugmentation:strength_provider_nether",
+                        "thaumicaugmentation:strength_provider_end"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "EMPTINESS_MODIFIER",
+            "name": "thaumicaugmentation.research.emptiness_modifier.title",
+            "icons": [
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_emptiness\"}"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "DIMENSIONAL_MODIFIERS",
+                "ENTERING_FRACTURE"
+            ],
+            "meta": [
+                "HIDDEN"
+            ],
+            "location": [
+                9,
+                -1
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.emptiness_modifier.0",
+                    "required_item": [
+                        "oredict:stoneVoid"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.emptiness_modifier.1",
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_emptiness"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "FRENZY_MODIFIER",
+            "name": "thaumicaugmentation.research.frenzy_modifier.title",
+            "icons": [
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_frenzy\"}"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "GAUNTLET_AUGMENTATION",
+                "~SEALGUARD"
+            ],
+            "location": [
+                5,
+                0
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.frenzy_modifier.0",
+                    "required_knowledge": [
+                        "OBSERVATION;GOLEMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ],
+                    "required_craft": [
+                        "thaumcraft:module;1;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.frenzy_modifier.1",
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_frenzy"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "EXPERIENCE_MODIFIER",
+            "name": "thaumicaugmentation.research.experience_modifier.title",
+            "icons": [
+                "thaumicaugmentation:augment_builder_power;1;0;{id:\"thaumicaugmentation:strength_experience\"}"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "GAUNTLET_AUGMENTATION",
+                "~CURIOSITYBAND"
+            ],
+            "location": [
+                5,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.experience_modifier.0",
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.experience_modifier.1",
+                    "recipes": [
+                        "thaumicaugmentation:strength_provider_experience"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "VIS_BATTERY_AUGMENT",
+            "name": "thaumicaugmentation.research.vis_battery_augment.title",
+            "icons": [
+                "thaumicaugmentation:augment_vis_battery"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "GAUNTLET_AUGMENTATION",
+                "~VISBATTERY"
+            ],
+            "location": [
+                6,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.vis_battery_augment.0",
+                    "required_item": [
+                        "thaumcraft:vis_battery"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.vis_battery_augment.1",
+                    "recipes": [
+                        "thaumicaugmentation:augment_vis_battery"
+                    ]
+                }
+            ]
+        }
+    ]
+}

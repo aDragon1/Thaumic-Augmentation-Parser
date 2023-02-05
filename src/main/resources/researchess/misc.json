@@ -1,0 +1,161 @@
+{
+    "entries": [
+        {
+            "key": "THAUMIC_AUGMENTATION_BASE",
+            "name": "thaumicaugmentation.research.thaumic_augmentation_base.title",
+            "icons": [
+                "thaumicaugmentation:textures/gui/base_research_icon.png"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "~FIRSTSTEPS"
+            ],
+            "siblings": [
+                "~FIRSTSTEPS"
+            ],
+            "meta": [
+                "ROUND",
+                "HIDDEN"
+            ],
+            "location": [
+                0,
+                0
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.thaumic_augmentation_base.0"
+                }
+            ]
+        },
+        {
+            "key": "VIS_REGENERATOR",
+            "name": "thaumicaugmentation.research.vis_regenerator.title",
+            "icons": [
+                "thaumicaugmentation:vis_regenerator"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMIC_AUGMENTATION_BASE",
+                "METALLURGY@1"
+            ],
+            "location": [
+                -1.5,
+                -1.5
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.vis_regenerator.0",
+                    "required_item": [
+                        "thaumcraft:leaves_silverwood"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "OBSERVATION;ALCHEMY;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.vis_regenerator.1",
+                    "recipes": [
+                        "thaumicaugmentation:lattice",
+                        "thaumicaugmentation:vis_regenerator"
+                    ]
+                }
+            ],
+            "addenda": [
+                {
+                    "text": "thaumicaugmentation.research.vis_regenerator.2",
+                    "required_research": [
+                        "FLUX"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "MORE_MECHANISMS",
+            "name": "thaumicaugmentation.research.more_mechanisms.title",
+            "icons": [
+                "thaumicaugmentation:button_greatwood",
+                "thaumicaugmentation:button_silverwood",
+                "thaumicaugmentation:button_arcane_stone",
+                "thaumicaugmentation:pressure_plate_greatwood",
+                "thaumicaugmentation:pressure_plate_silverwood",
+                "thaumicaugmentation:pressure_plate_arcane_stone"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMIC_AUGMENTATION_BASE",
+                "~!PLANTWOOD"
+            ],
+            "location": [
+                1,
+                1
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.more_mechanisms.0",
+                    "required_item": [
+                        "minecraft:wooden_button",
+                        "minecraft:stone_button",
+                        "minecraft:wooden_pressure_plate",
+                        "minecraft:stone_pressure_plate"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.more_mechanisms.1",
+                    "recipes": [
+                        "thaumicaugmentation:button_greatwood",
+                        "thaumicaugmentation:button_silverwood",
+                        "thaumicaugmentation:button_arcane_stone",
+                        "thaumicaugmentation:pressure_plate_greatwood",
+                        "thaumicaugmentation:pressure_plate_silverwood",
+                        "thaumicaugmentation:pressure_plate_arcane_stone"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ITEM_GRATE",
+            "name": "thaumicaugmentation.research.item_grate.title",
+            "icons": [
+                "thaumicaugmentation:item_grate"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMIC_AUGMENTATION_BASE"
+            ],
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                1,
+                -1
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.item_grate.0",
+                    "recipes": [
+                        "thaumicaugmentation:item_grate"
+                    ]
+                }
+            ],
+            "addenda": [
+                {
+                    "text": "thaumicaugmentation.research.item_grate.1",
+                    "required_research": [
+                        "SEALSTORE"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.item_grate.2",
+                    "required_research": [
+                        "LEVITATOR"
+                    ]
+                }
+            ]
+        }
+    ]
+}
