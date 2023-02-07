@@ -9,9 +9,7 @@ fun main() {
 
 class Sketch() : PApplet() {
     data class Research(
-        var name_eng: String,
-        var name_ru: String,
-        var dependencies: MutableList<String?>
+        var name_eng: String, var name_ru: String, var dependencies: MutableList<String?>
     )
 
     companion object Companion {
@@ -23,51 +21,75 @@ class Sketch() : PApplet() {
 
     private lateinit var json: JSONObject
     private val researches: MutableList<Research> = mutableListOf()
+    private val translatedFolderPath =
+        "C:\\Users\\aDragon\\IdeaProjects\\AugmentationResearchParser\\src\\main\\resources\\translates"
+    private val outputFilePath = "C:\\Users\\aDragon\\Downloads\\researches.loveRelShadowww"
 
     override fun setup() {
-        iterateFromAllFile("C:\\Users\\aDragon\\IdeaProjects\\AugmentationResearchParser\\src\\main\\resources\\researchess\\")
-        val translateFile =
-            File("C:\\Users\\aDragon\\IdeaProjects\\AugmentationResearchParser\\src\\main\\resources\\ru_ru.txt")
-        getTranslate(translateFile, ".title")
-        researches.forEach { println(it) }
+        val translatedFolder = File(translatedFolderPath)
+        val outputFile = File(outputFilePath)
+        iterateFromAllFile("C:\\Users\\aDragon\\IdeaProjects\\AugmentationResearchParser\\src\\main\\resources\\researches\\")
+        getTranslate(translatedFolder, ".title", ".name")
+        letMeOut(outputFile)
     }
 
     private fun iterateFromAllFile(filePath: String) {
-        File(filePath).walkTopDown()
-            .forEach {
-                try {
-                    json =
-                        loadJSONObject(it.absoluteFile)
-                    val entries = parseJSONArray(json.get("entries").toString())
+        File(filePath).walkTopDown().forEach {
+            if (it.isDirectory) return@forEach
+            json = loadJSONObject(it.absoluteFile)
+            val entries = parseJSONArray(json.get("entries").toString())
 
-                    for (i in 0 until entries.size()) {
-                        val currentObject = entries.getJSONObject(i)
-                        researches.add(getResearch(currentObject))
-                    }
-                } catch (e: java.lang.Exception) {
-//                    println(e.message)
-                }
+            for (i in 0 until entries.size()) {
+                val currentObject = entries.getJSONObject(i)
+                researches.add(getResearch(currentObject))
             }
+        }
     }
 
-//    Супер неэффективно. Refactor it later....
-    private fun getTranslate(translateFile: File, extra: String) {
-        val translateStrings = translateFile.readLines()
-        for (i in 0 until researches.size)
-            for (j in translateStrings.indices) {
+    //    Супер неэффективно. Refactor it later....
+    private fun getTranslate(folder: File, extraTitle: String, extraName: String) {
+        folder.walkTopDown().forEach { translateFile ->
+            if (translateFile.isDirectory) return@forEach
+            val translateStrings = translateFile.readLines()
+            for (i in 0 until researches.size) for (j in translateStrings.indices) {
                 val translateString = translateStrings[j].lowercase()
-                val currentResearch = researches[i].name_eng.lowercase().plus(extra)
+                val currentResearchTitle = researches[i].name_eng.lowercase().plus(extraTitle)
+                val currentResearchName = researches[i].name_eng.lowercase().plus(extraName)
                 val dependency = researches[i].dependencies
 
-                translateName(translateString, currentResearch, i)
-                translateDependencies(translateString, dependency, extra, i)
+                translateName(translateString, currentResearchTitle, i)
+                if (researches[i].name_ru.isBlank()) translateName(translateString, currentResearchName, i)
+                translateDependencies(translateString, dependency, extraTitle, i)
+                if (dependency.size > 0 && dependency[0]!!.isBlank()) translateDependencies(
+                    translateString, dependency, extraName, i
+                )
             }
+        }
+    }
+
+    private fun letMeOut(out: File) {
+        var counter = 1
+        if (out.exists()) out.writeText("")
+        researches.forEach {
+            val ru = it.name_ru
+            val eng = it.name_eng
+            var dep = "["
+            if (it.dependencies.size > 0) {
+                it.dependencies.forEach { curDep -> dep += "\"$curDep\", " }
+            }
+            if (dep.length > 1)
+                dep = dep.slice(0 until dep.lastIndexOf(','))
+            dep+= "]"
+            val outString = "${counter++})\n Ru:\"$ru\"\n Eng:\"$eng\"\n Зависимости:$dep \n\n"
+            println(outString)
+            out.appendText(outString)
+        }
     }
 
     private fun translateName(tString: String, cRes: String, i: Int) {
         if (tString.contains(cRes)) {
- //     Строка в файле с транслейтом выглядит как "some.some.some.name_eng=name_ru"
-            val ru = tString.slice(tString.indexOf('=') + 1 until tString.length)
+            //     Строка в файле с транслейтом выглядит как "some.some.some.name_eng=name_ru"
+            val ru = tString.slice(tString.indexOf('=') + 1 until tString.length).trim()
             researches[i].name_ru = ru
         }
     }
@@ -77,7 +99,7 @@ class Sketch() : PApplet() {
             val cur = cDep[j]?.lowercase().plus(extra)
             if (tString.contains(cur)) {
                 val ru = tString.slice(tString.indexOf('=') + 1 until tString.length)
-                cDep[j] = ru
+                cDep[j] = ru.trim()
             }
         }
         researches[i].dependencies = cDep
@@ -90,10 +112,9 @@ class Sketch() : PApplet() {
 
         val parentsList = mutableListOf<String?>()
 
-        if (parents != null)
-            for (j in 0 until parents.size()) {
-                parentsList.add(parents.getString(j).removeAll(setToRemove))
-            }
+        if (parents != null) for (j in 0 until parents.size()) {
+            parentsList.add(parents.getString(j).removeAll(setToRemove))
+        }
 
         return Research(key, "", parentsList)
     }

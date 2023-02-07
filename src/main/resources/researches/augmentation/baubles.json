@@ -1,0 +1,206 @@
+{
+    "entries": [
+        {
+            "key": "HARNESS_BASE",
+            "name": "thaumicaugmentation.research.harness_base.title",
+            "icons": [
+                "thaumicaugmentation:material;1;4"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMIC_AUGMENTATION_BASE",
+                "~METALLURGY@2",
+                "~LEVITATOR"
+            ],
+            "location": [
+                -2,
+                7
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.harness_base.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.harness_base.1",
+                    "recipes": [
+                        "thaumicaugmentation:harness_base"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "THAUMOSTATIC_HARNESS",
+            "name": "thaumicaugmentation.research.thaumostatic_harness.title",
+            "icons": [
+                "thaumicaugmentation:thaumostatic_harness"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "HARNESS_BASE"
+            ],
+            "location": [
+                -2,
+                9
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_harness.0",
+                    "required_research": [
+                        "m_endoftheworld",
+                        "m_LEVITATE"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "OBSERVATION;AUROMANCY;1",
+                        "THEORY;AUROMANCY;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_harness.1",
+                    "recipes": [
+                        "thaumicaugmentation:thaumostatic_harness"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "THAUMOSTATIC_GYROSCOPE",
+            "name": "thaumicaugmentation.research.thaumostatic_gyroscope.title",
+            "icons": [
+                "thaumicaugmentation:thaumostatic_harness_augment;1;0"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMOSTATIC_HARNESS",
+                "~GAUNTLET_AUGMENTATION"
+            ],
+            "location": [
+                -4,
+                9
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_gyroscope.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_gyroscope.1",
+                    "recipes": [
+                        "thaumicaugmentation:thaumostatic_gyroscope"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "THAUMOSTATIC_GIRDLE",
+            "name": "thaumicaugmentation.research.thaumostatic_girdle.title",
+            "icons": [
+                "thaumicaugmentation:thaumostatic_harness_augment;1;1"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "THAUMOSTATIC_HARNESS",
+                "~GAUNTLET_AUGMENTATION"
+            ],
+            "location": [
+                0,
+                9
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_girdle.0",
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.thaumostatic_girdle.1",
+                    "recipes": [
+                        "thaumicaugmentation:thaumostatic_girdle"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ELYTRA_HARNESS",
+            "name": "thaumicaugmentation.research.elytra_harness.title",
+            "icons": [
+                "thaumicaugmentation:elytra_harness"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "HARNESS_BASE",
+                "!ELYTRA"
+            ],
+            "meta": [
+                "HIDDEN"  
+            ],
+            "location": [
+                0,
+                7
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.elytra_harness.0",
+                    "required_research": [
+                        "m_ELYTRAFLY"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1",
+                        "THEORY;ELDRITCH;1"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.elytra_harness.1",
+                    "recipes": [
+                        "thaumicaugmentation:elytra_harness"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ELYTRA_BOOSTER",
+            "name": "thaumicaugmentation.research.elytra_booster.title",
+            "icons": [
+                "thaumicaugmentation:elytra_harness_augment;1;0"
+            ],
+            "category": "THAUMIC_AUGMENTATION",
+            "parents": [
+                "ELYTRA_HARNESS",
+                "IMPETUS"
+            ],
+            "location": [
+                3,
+                7
+            ],
+            "stages": [
+                {
+                    "text": "thaumicaugmentation.research.elytra_booster.0",
+                    "required_item": [
+                        "minecraft:firework_rocket"
+                    ],
+                    "required_knowledge": [
+                        "OBSERVATION;ARTIFICE;1",
+                        "OBSERVATION;ELDRITCH;1",
+                        "THEORY;ARTIFICE;1",
+                        "THEORY;ELDRITCH;2"
+                    ]
+                },
+                {
+                    "text": "thaumicaugmentation.research.elytra_booster.1",
+                    "recipes": [
+                        "thaumicaugmentation:elytra_booster"
+                    ]
+                }
+            ]
+        }
+    ]
+}
