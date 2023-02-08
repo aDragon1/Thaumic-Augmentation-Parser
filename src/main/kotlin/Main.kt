@@ -9,7 +9,7 @@ fun main() {
 
 class Sketch() : PApplet() {
     data class Research(
-        var name_eng: String, var name_ru: String, var dependencies: MutableList<String?>
+        var name_eng: String, var name_ru: String, var dependencies: MutableList<String?>, var category: String
     )
 
     companion object Companion {
@@ -57,7 +57,10 @@ class Sketch() : PApplet() {
                 val currentResearchName = researches[i].name_eng.lowercase().plus(extraName)
                 val dependency = researches[i].dependencies
 
-                translateName(translateString, currentResearchTitle, i)
+                translateName(translateString, researches[i].name_eng.lowercase().plus(extraTitle), i)
+                if (researches[i].name_ru.isBlank())
+                    translateName(translateString, researches[i].name_eng.lowercase().plus(extraName), i)
+
                 if (researches[i].name_ru.isBlank()) translateName(translateString, currentResearchName, i)
                 translateDependencies(translateString, dependency, extraTitle, i)
                 if (dependency.size > 0 && dependency[0]!!.isBlank()) translateDependencies(
@@ -69,21 +72,35 @@ class Sketch() : PApplet() {
 
     private fun letMeOut(out: File) {
         var counter = 1
+        var prev = Research("", "", mutableListOf(""), "")
+        researches.sortBy { it.category }
+
         if (out.exists()) out.writeText("")
+
         researches.forEach {
             val ru = it.name_ru
             val eng = it.name_eng
-            var dep = "["
-            if (it.dependencies.size > 0) {
-                it.dependencies.forEach { curDep -> dep += "\"$curDep\", " }
+            val dep = getDepString(it)
+
+            if (it.category != prev.category) {
+                counter = 1
+                out.appendText(" Категория:${it.category}\n")
             }
-            if (dep.length > 1)
-                dep = dep.slice(0 until dep.lastIndexOf(','))
-            dep+= "]"
-            val outString = "${counter++})\n Ru:\"$ru\"\n Eng:\"$eng\"\n Зависимости:$dep \n\n"
-            println(outString)
+
+            val outString = "  ${counter++})\n   Ru:\"$ru\"\n   Eng:\"$eng\"\n   Зависимости:$dep\n\n"
             out.appendText(outString)
+            prev = it
         }
+    }
+
+    private fun getDepString(research: Research): String {
+        var dep = "["
+        if (research.dependencies.size > 0) {
+            research.dependencies.forEach { curDep -> dep += "\"$curDep\", " }
+        }
+        if (dep.length > 1)
+            dep = dep.slice(0 until dep.lastIndexOf(','))
+        return "$dep]"
     }
 
     private fun translateName(tString: String, cRes: String, i: Int) {
@@ -109,14 +126,14 @@ class Sketch() : PApplet() {
         val setToRemove = setOf('1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '~', '@')
         val key = entry.getString("key").removeAll(setToRemove)
         val parents = entry.getJSONArray("parents")
-
+        val category = entry.getString("category").removeAll(setToRemove)
         val parentsList = mutableListOf<String?>()
 
         if (parents != null) for (j in 0 until parents.size()) {
             parentsList.add(parents.getString(j).removeAll(setToRemove))
         }
 
-        return Research(key, "", parentsList)
+        return Research(key, "", parentsList, category)
     }
 
     private fun String.removeAll(charactersToRemove: Set<Char>): String {
